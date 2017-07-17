@@ -1,0 +1,226 @@
+<!--
+chapter 3,  July 17, Monday
+
+上一节我们讲了bootstrap的网格系统与响应式布局，这两部分是bootstrap的核心部分。
+除了这两部分，bootstrap还提供了很多功能和优秀的插件。
+这一节我们学习使用bootstrap提供的轮播图插件。
+嗯，就是很多网站上都有的，会左右自动切换的图片。也可以叫幻灯片。
+
+然后再加上一段javascript代码来控制我们的轮播效果。
+	<script type="text/javascript">
+		$(function(){
+			$('.carousel').carousel()
+		})
+	</script>
+
+这个效果是不是很酷炫，我们来在丰富一下我们的轮播图  (再来)
+	<script type="text/javascript">
+		$(function(){
+			$('.carousel').carousel({
+				interval: 2000,
+				wrap: true
+			})
+		})
+	</script>
+这段代码是控制我们的轮播图初始效果的。
+interval:2000,是指轮播效果每2秒执行一次
+wrap:true,是让我们的轮播图连续循环
+
+		<ol class="carousel-indicators">
+			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+			<li data-target="#myCarousel" data-slide-to="1"></li>
+			<li data-target="#myCarousel" data-slide-to="2"></li>
+		</ol>
+这个是给我们的轮播图加个导航指标
+点击导航指标可以直接跳到相应的图片
+-->
+
+
+
+
+<!--
+chapter 4
+
+上一节我们做出了一个酷炫的轮播图，这一节我们在稍加完善一下，然后把我们的页面内容丰富一下。
+首先给我们的轮播图每一页加上一个标题，代码如下
+				<div class="carousel-caption">标题 1</div>
+
+接下来我们在把轮播图下方的四个盒子加上内容，修改一下样式，最终效果如图
+
+
+现在斌叔在交你一个使用的小玩意儿，也是bootstrap提供的功能
+就是bootstrap的字体图标，它的效果是这样的
+
+<li><a href="#"><span class="glyphicon glyphicon-user"></span> 
+				<span class="glyphicon glyphicon-log-in">
+
+画线的这部分就是字体图标了，bootstrap提供了很多字体图标，你可以去官网查看哦。
+到这里我们的bootstrap教程就差不多要结束了，我们主要学习了响应式布局、轮播插件和字体图标。
+bootstrap这个框架还提供了很多其他酷炫功能效果，如果感兴趣的话可以去bootstrap官网继续深入学习哦。
+你已经学完了bootstrap的入门教程
+
+
+
+
+References:
+http://www.divcss5.com/wenji/w732.shtml
+
+		div{border-radius: 5px;}
+		.abc img{border-radius: 5px;}
+
+#divcss5 	<!-- text-align: left;  -->
+-->
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>bootstrap网页</title>
+	<link rel="stylesheet" type="text/css" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script type="text/javascript" src="http://cdn.static.runoob.com/libs/jquery/2.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<style type="text/css">
+		body{
+			text-align: center;
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			height: auto;
+			border: 1px solid #f60;
+			padding: 5px;
+		}
+
+		#divcss5{margin: 1px auto; border: 1px #ffffff;}
+		#divcss5 img{border-radius: 50%}
+
+
+	</style>
+</head>
+<body>
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">橙旭园</a>
+			</div>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="#"><span class="glyphicon glyphicon-user"></span> 注册</a></li>
+				<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> 登录</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<div id="myCarousel" class="carousel slide">
+		<ol class="carousel-indicators">
+			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+			<li data-target="#myCarousel" data-slide-to="1"></li>
+			<li data-target="#myCarousel" data-slide-to="2"></li>
+		</ol>
+		<div class="carousel-inner">
+			<div class="item active">
+				<img src="https://resource.bcgame-face2face.haorenao.cn/bootstrap-banner1.jpg" alt="1">
+				<div class="carousel-caption">标题 1</div>
+			</div>
+			<div class="item">
+				<img src="https://resource.bcgame-face2face.haorenao.cn/bootstrap-banner2.jpg" alt="2">
+				<div class="carousel-caption">标题 2</div>
+			</div>
+			<div class="item">
+				<img src="https://resource.bcgame-face2face.haorenao.cn/bootstrap-banner3.jpg" alt="3">
+				<div class="carousel-caption">标题 3</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+
+			<div class="box col-lg-3 col-lg-offset-0 col-md-3 col-md-offset-0 col-sm-4 col-sm-offset-2 col-xs-8 col-xs-offset-2">
+				<header  id="divcss5">
+					<img src="https://www.cxy61.com/statics/images/index-video1.png" alt="" width="100">
+					<p>比尔·盖茨</p>
+				</header>
+				<p>比尔·盖茨是一名美国著名企业家、投资者、软件工程师、慈善家。他与保罗·艾伦一起创建了微软公司，曾任微软董事长、CEO和首席软件设计师，并持有公司超过8%的普通股，也是公司最大的个人股东。</p>
+			</div>
+
+			<div class="box col-lg-3 col-lg-offset-0 col-md-3 col-md-offset-0 col-sm-4 col-sm-offset-0 col-xs-8 col-xs-offset-2">
+				<header id="divcss5">
+					<img src="https://www.cxy61.com/statics/images/index-video3.png" alt="" width="100">
+					<p>扎克伯格</p>
+				</header>
+				<p>扎克伯格出生于美国纽约州，是知名的社交网站Facebook的创始人、董事长兼首席执行官，同时也是一名软件设计师。Facebook是由他和哈佛大学的同学于2004年共同创立，被誉为Facebook教主。</p>
+			</div>
+
+			<div class="box col-lg-3 col-lg-offset-0 col-md-3 col-md-offset-0 col-sm-4 col-sm-offset-2 col-xs-8 col-xs-offset-2">
+				<header id="divcss5">
+					<img src="https://www.cxy61.com/statics/images/index-video2.png" alt="" width="100">
+					<p>克里斯</p>
+				</header>
+				<p>克里斯·波什是一名前美国NBA职业篮球运动员，曾效力于多伦多猛龙、迈阿密热火队，司职大前锋和中锋。</p>
+			</div>
+
+			<div class="box col-lg-3 col-lg-offset-0 col-md-3 col-md-offset-0 col-sm-4 col-sm-offset-0 col-xs-8 col-xs-offset-2">
+				<header id="divcss5">
+					<img src="https://resource.bcgame-face2face.haorenao.cn/cb.png" alt="" width="100">
+					<p>陈斌</p>
+				</header>
+				<p>斌叔是前微软、思科高级工程师，参与windows7开发，14岁开始学习编程，全栈工程师。创办橙旭园儿童编程，潜心研究儿童编程教学方法，教学风格受世界各地学员喜爱。</p>
+			</div>
+
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		$(function(){
+			$('.carousel').carousel({
+				interval: 2000,
+				wrap: true
+			})
+		})
+	</script>
+</body>
+</html>
+
+
+
+
+<!--
+	<div class="container">
+		<div class="row">
+			<div class="box col-lg-2 col-lg-offset-2 col-md-3 col-md-offset-0 col-sm-4 col-sm-offset-2 col-xs-8 col-xs-offset-2">
+				<header>
+					<img src="https://www.cxy61.com/statics/images/index-video1.png" alt="">
+					<p>比尔·盖茨</p>
+				</header>
+				<p>比尔·盖茨是一名美国著名企业家、投资者、软件工程师、慈善家。他与保罗·艾伦一起创建了微软公司，曾任微软董事长、CEO和首席软件设计师，并持有公司超过8%的普通股，也是公司最大的个人股东。</p>
+			</div>
+			<dir class="box col-lg-2 col-lg-offset-0 col-md-3 col-md-offset-0 col-sm-4 col-sm-offset-0 col-xs-8 col-xs-offset-2">
+				<header>
+					<img src="https://www.cxy61.com/statics/images/index-video3.png" alt="">
+					<p>扎克伯格</p>
+				</header>
+				<p>扎克伯格出生于美国纽约州，是知名的社交网站Facebook的创始人、董事长兼首席执行官，同时也是一名软件设计师。Facebook是由他和哈佛大学的同学于2004年共同创立，被誉为Facebook教主。</p>
+			</dir>
+			<div class="box col-lg-2 col-lg-offset-0 col-md-3 col-md-offset-0 col-sm-4 col-sm-offset-2 col-xs-8 col-xs-offset-2">
+				<header>
+					<img src="https://www.cxy61.com/statics/images/index-video2.png" alt="">
+					<p>克里斯</p>
+				</header>
+				<p>克里斯·波什是一名前美国NBA职业篮球运动员，曾效力于多伦多猛龙、迈阿密热火队，司职大前锋和中锋。</p>
+			</div>
+			<dir class="box col-lg-2 col-lg-offset-0 col-md-3 col-md-offset-0 col-sm-4 col-sm-offset-0 col-xs-8 col-xs-offset-2">
+				<header>
+					<img src="https://resource.bcgame-face2face.haorenao.cn/cb.png" alt="">
+					<p>陈斌</p>
+				</header>
+				<p>斌叔是前微软、思科高级工程师，参与windows7开发，14岁开始学习编程，全栈工程师。创办橙旭园儿童编程，潜心研究儿童编程教学方法，教学风格受世界各地学员喜爱。</p>
+			</dir>
+		</div>
+	</div>
+-->
+
+
+
