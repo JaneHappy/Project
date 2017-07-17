@@ -1,0 +1,124 @@
+<!--
+July 16, Sunday
+
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+	<head>
+		//  <meta charset="utf-8">  
+		<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>bootstrap网页</title>
+	</head>
+	<body>
+		<div>hello world</div>
+	</body>
+</html>
+-->
+
+<!--
+css
+
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	line-height: 1.428571429;
+	color: #333333
+	background-color: #ffffff;
+}
+-->
+
+
+
+
+<!-- July 17, Monday,  chapter 2 -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>bootstrap网页</title>
+	<link rel="stylesheet" type="text/css" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script type="text/javascript" src="http://cdn.static.runoob.com/libs/jquery/2.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<style type="text/css">
+		body{
+			text-align: center;
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			height: auto;
+			border: 1px solid #f60;
+			padding: 5px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="box col-lg-2 col-md-3 col-sm-4 col-xs-6 col-lg-offset-2">
+				<header>box1</header>
+				<p>这是一个盒子，它占了body宽度的四分之一。这是一个盒子，它占了body宽度的四分之一。</p>
+			</div>
+			<div class="box col-lg-2 col-md-3 col-sm-4 col-xs-6">
+				<header>box2</header>
+				<p>这是一个盒子，它占了body宽度的四分之一。这是一个盒子，它占了body宽度的四分之一。</p>
+			</div>
+			<div class="box col-lg-2 col-md-3 col-sm-4 col-xs-6">
+				<header>box3</header>
+				<p>这是一个盒子，它占了body宽度的四分之一。这是一个盒子，它占了body宽度的四分之一。</p>
+			</div>
+			<div class="box col-lg-2 col-md-3 col-sm-4 col-xs-6">
+				<header>box4</header>
+				<p>这是一个盒子，它占了body宽度的四分之一。这是一个盒子，它占了body宽度的四分之一。</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+
+<!--
+		.box{
+			width: -webkit-calc(25% - 12px);
+			width: -moz-calc(25% - 12px);
+			width: -o-calc(25% - 12px);
+			width: calc(25% - 12px);
+			height: auto;
+			float: left;
+			border: 1px solid #f60;
+			padding: 5px;
+		}
+
+
+
+	<div class="container">
+		<div class="row">
+
+行（row）必须放在 .container class 内，一个row代表1行，1行内被分为12列。
+
+col代表列，col-xx-y中的y代表当前元素所占的列数。xx的值可以为四种：lg、md、sm、xs
+分别代表在四种尺寸宽度下的布局样式，四种尺寸宽度为：lg>=1200px、md>=992px、sm>=768px、xs<768px
+这样，我们只需要加上class名，就可以实现响应式效果，而不用去在费心思自己写。
+
+
+col-lg-offset-2
+这个是偏移量,就是在lg的布局下，当前标签加上对于列数的左外边距（margin-left）
+我们的col-lg-2是占了2个列，四个div是8列，那么还剩4列空着，你可以把col-lg-offset-2删掉看看效果
+我们加上两列的偏移，就相当于在左边空出两列，这样左右各有2列空着，我们的四个div就正好占中间的8列
+这就是bootstrap的网格系统了，网格的基本结构可以用下图来表示
+
+<div class="container">
+	<div class="row">
+		<div class="col-*-*"></div>
+		<div class="col-*-*"></div>
+	</div>
+	<div class="row">...</div>
+</div>
+<div class="container">....
+
+-->
+
+
+
