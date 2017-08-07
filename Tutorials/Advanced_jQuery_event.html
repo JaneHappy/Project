@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+	<title></title>
+</head>
+<body style="width: 1000px; margin: 0 auto;">
+<!-- Advanced JS&jQuery, Class 6 -->
+
+	<div style="width: 100%; text-align: center; margin-top: 50px;">
+		<h1>斌叔的茶叶铺子</h1>
+	</div>
+	<hr>
+	<div style="width: 100%; text-align: center;">
+		<h3 style="color: blue;">所有茶叶</h3>
+	</div>
+	<div id="all_teas" style="width: 100%;">
+		
+	</div>
+
+	<!--
+	现在就开始最重要的JavaScript编程啦
+	先写jQuery的ready方法，以便能使用jQuery的ajax
+
+	获取到数据之后，开始对数组遍历，找到每一项数据
+
+	value.title是什么意思?
+	我们通过控制台可以看见数组每一项都有 image price title 这三个字段，并且里面存了值， 所以上面我们通过 value.title 获取到值，现在这个 value 就代表着每一项 （0，1，2，3，4，5）
+	最后我们把获取到的值插入到html中显示出来
+	-->
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$.ajax({
+				type: 'GET',
+				url: "http://resource.haorenao.cn/teas2.json",
+				success: function(data) {
+					var teas = data;
+					console.log(teas);
+					$.each(teas, function(key, value) {
+						var title = value.title;
+						var image = value.image;
+						var price = value.price;
+						//console.log(key) 	// 0  Advanced_jQuery_event.html:45:7
+						//console.log(value)	// Object { title: "乌龙茶", price: "80", image: "http://resource.haorenao.cn/girls/w…" }
+
+						/*
+						var html = '<div style="width: 333px; height: 300px; float: left; text-align: center; margin: 10px 0;'
+							+ '<h1 style="margin: 0">' + title + '</h1>'
+							//+ '<br>'
+							+ '<img width="200" height="200" src="' + image + '">'
+							+ '<p>价格：' + price + '</p>'
+							+ '</div>'
+						*/
+						var html = '<div style="width: 333px; height: 300px; float: left; text-align: center; margin: 10px 0;">'
+							+ '<img width="200" height="200" src="' + image + '">'
+							+ '<h1 style="margin: 0">' + title + '</h1>'
+							+ '价格：' + price + '' //'<p>价格：' + price + '</p>'
+							+ '</div>'
+						$('#all_teas').append(html);
+					});
+				}
+			});
+		});
+	</script>
+
+
+</body>
+</html>
