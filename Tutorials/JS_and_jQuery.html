@@ -82,19 +82,47 @@
 <!--  Class 4  -->
 <form>
 	第一个数字：<br>
-	<input type="text" name="num1" value="100">
+	<input type="text" name="id_num1" value="100">
 	<br>
 	第二个数字：<br>
-	<input type="text" name="num2" value="200">
+	<input type="text" name="id_num2" value="200">
 	<br>
 </form>
 <script type="text/javascript">
-	var a = document.getElementById('num1').value;
-	var b = document.getElementById('num2').value;
+	// 获取input的值
+	var a = document.getElementById('id_num1').value;
+	var b = document.getElementById('id_num2').value;
 
 	alert(a);
 	alert(b);
+
+	// 将获取的值转化为数字类型
+	var a_int = parseInt(a, 10);
+	var b_int = parseInt(b, 10);
+
+	// 调用加法，弹出结果
+	var result = addition(a_int, b_int);
+	alert(result);
+
+	// 加法函数
+	function addition(x, y) {
+		return x + y;
+	}
+
 </script>
+
+<script type="text/javascript">
+	var a = 10;
+	var b = 20;  // 现在a,b为数字
+	var c = '10';
+	var d = '20';  // 现在c,d为字符串
+
+	alert(a + b);  // 两个数字相加
+	alert(c + d);  // 两个字符串相加
+</script>
+
+
+
 
 
 
