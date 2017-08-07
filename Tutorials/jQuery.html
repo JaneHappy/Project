@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	<!--
+	 jQuery的百度CDN地址 
+
+	 https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js
+	-->
+</head>
+<body>
+
+
+<!-- Class 8 -->
+
+<form>
+	第一个数字：
+	<input type="text" id="num1">
+	<br>
+	第二个数字：
+	<input type="text" id="num2">
+	<br>
+	运算结果：
+	<p id="result">结果将在这里显示</p>
+</form>
+
+<button id="add">+</button>
+<button id="subtract">-</button>
+<button id="multiply">×</button>
+<button id="divide">÷</button>
+
+<!--
+<script type="text/javascript">
+	// 获取元素
+	// $('#add');  // 它们是等价的，获取 id 为 add 的元素  // document.getElementById('add');
+	//  要注意括号的位置，不要写错哦
+	//   上次课innerHtml是怎么使用的, 先根据id获取元素，然后通过.innerHTML修改，像这样
+	var addBtn = $('#add').click(function() {
+		getInputNum();
+		var result = addition(a_int, b_int);
+		// 用了 jQuery 后的写法
+		$('#result').html(String(result));  //resultNum.innerHTML = String(result);
+	});
+
+	// 应用 getElementById 的写法     var a = document.getElementById('num1').value;
+	// 应用 jQuery 的写法
+	var a = $('#num1').val();
+	var b = $('#num2').val();
+
+</script>
+-->
+
+<script type="text/javascript">
+	var a_int, b_int;  // 定义变量也可以写在同一行
+	// 点击事件
+	$('#add').click(function() {
+		getInputNum();
+		var result = addition(a_int, b_int);
+		$('#result').html(String(result));
+	});
+	$('#subtract').click(function() {
+		getInputNum();
+		var result = subtraction(a_int, b_int);
+		$('#result').html(String(result));
+	});
+	$('#multiply').click(function() {
+		getInputNum();
+		var result = multiplication(a_int, b_int);
+		$('#result').html(String(result));
+	});
+	$('#divide').click(function() {
+		getInputNum();
+		var result = division(a_int, b_int);
+		$('#result').html(String(result));
+	});
+	// 函数方法
+	function getInputNum() {
+		var a = $('#num1').val();
+		var b = $('#num2').val();
+		a_int = parseInt(a, 10);
+		b_int = parseInt(b, 10);
+	}
+	function addition(x, y) {
+		return x + y;
+	}
+	function subtraction(x, y) {
+		return x - y;
+	}
+	function multiplication(x, y) {
+		return x * y;
+	}
+	function division(x, y) {
+		if (y == 0) {
+			//alert("0不能做除数");
+			//return;
+			return "0不能做除数";
+		} else {
+			return x / y;
+		}
+	}
+</script>
+
+<!--
+运行一下你的程序，你会发现程序依旧能正确的进行四则运算，但是JS部分的代码却减少了很多
+变得简洁明了了
+这就是jQuery的强大之处，它还有很多功能等你发现
+我们JS&jQuery新初级教程到这里就结束了
+通过这8节课，我们使用onclick、function、getElementById、innerHTML等等知识点完成了一个简易的计算器
+还学会了如何用jQuery来简化我们的代码，要多加练习哦！
+-->
+
+
+</body>
+</html>
