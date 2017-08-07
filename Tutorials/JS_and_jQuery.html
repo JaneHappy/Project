@@ -82,10 +82,10 @@
 <!--  Class 4  -->
 <form>
 	第一个数字：<br>
-	<input type="text" name="id_num1" value="100">
+	<input type="text" name="id_num1" id="id_num1" value="100">
 	<br>
 	第二个数字：<br>
-	<input type="text" name="id_num2" value="200">
+	<input type="text" name="id_num2" id="id_num2" value="200">
 	<br>
 </form>
 <script type="text/javascript">
@@ -126,17 +126,17 @@
 <!--  Class 5  -->
 <form>
 	第一个数字：<br>
-	<input type="text" name="num1">
+	<input type="text" name="num1" id="num1">
 	<br>
 	第二个数字：<br>
-	<input type="text" name="num2">
+	<input type="text" name="num2" id="num2">
 	<br>
 </form>
 
-<button id="add">+</button>
+<button id="add_c5">+</button>
 <script type="text/javascript">
 	// 获取加号按钮
-	var addBtn = document.getElementById('add');
+	var addBtn = document.getElementById('add_c5');
 	//addBtn.onmouseover = function () {
 	//	alert("我被点击了");
 	//}
@@ -160,21 +160,204 @@
 
 
 
-<!-- Class 6 -->
+
+
+
+<!-- Class 6,  (54,35) -->
 <form>
 	第一个数字：<br>
-	<input type="text" name="num1">
+	<input type="text" name="num1" id="num1_c6">
 	<br>
 	第二个数字：<br>
-	<input type="text" name="num2">
+	<input type="text" name="num2" id="num2_c6">
 	<br>
 </form>
 
 <button id="add">+</button>
-<button id="substract">-</button>
+<button id="subtract">-</button>
 <button id="multiply">×</button>
 <button id="divide">÷</button>
 
+<script type="text/javascript">
+	// 通过 getElementById 获取按钮
+	// 加号按钮
+	var addBtn = document.getElementById('add');
+	// 减号按钮
+	var subtractBtn = document.getElementById('subtract');
+	// 乘号按钮
+	var multiplyBtn = document.getElementById('multiply');
+	// 除号按钮
+	var divideBtn = document.getElementById('divide');
+
+	// 加、减、乘、除
+	function addition(x, y) {
+		return x + y;
+	}
+	function subtraction(x, y) {
+		return x - y;
+	}
+	function multiplication(x, y) {
+		return x * y;
+	}
+	function division(x, y) {
+		if (y == 0) {
+			alert("0不能做除数");
+			return ;
+		} else {
+			return x / y;
+		}
+	}
+
+
+	//定义两个全局变量
+	var a_int;
+	var b_int;
+	// 获取 input 的值并转为数字
+	function getInputNum() {
+		// 这里是局部变量
+		var a = document.getElementById('num1_c6').value;
+		var b = document.getElementById('num2_c6').value;
+		// 将转化后的数字赋值给全局变量
+		a_int = parseInt(a, 10);
+		b_int = parseInt(b, 10);
+	}
+
+
+	// 为加号按钮添加点击方法
+	addBtn.onclick = function() {
+		getInputNum();
+		///var a = document.getElementById('num1_c6').value;
+		///var b = document.getElementById('num2_c6').value;
+
+		///var a_int = parseInt(a, 10);
+		///var b_int = parseInt(b, 10);
+		// 调用加法
+		var result = addition(a_int, b_int);
+		alert(result);
+	};
+	// 为减号按钮添加点击方法
+	subtractBtn.onclick = function() {
+		getInputNum();
+		///var a = document.getElementById('num1_c6').value;
+		///var b = document.getElementById('num2_c6').value;
+
+		///var a_int = parseInt(a, 10);
+		///var b_int = parseInt(b, 10);
+		// 调用减法
+		var result = subtraction(a_int, b_int);
+		alert(result);
+	}
+
+	multiplyBtn.onclick = function() {
+		getInputNum();
+		var result = multiplication(a_int, b_int);
+		alert(result);
+	};
+	divideBtn.onclick = function() {
+		getInputNum();
+		var result = division(a_int, b_int);
+		alert(result);
+	}
+</script>
+
+
+
+
+
+
+<!-- Class 7,   -->
+<form>
+	第一个数字：<br>
+	<input type="text" name="num1" id="num1_c7">
+	<br>
+	第二个数字：<br>
+	<input type="text" name="num2" id="num2_c7">
+	<br>
+	运算结果：<br>
+	<p id="result_c7">结果将在这里显示</p>
+</form>
+
+<button id="add_c7">+</button>
+<button id="subtract_c7">-</button>
+<button id="multiply_c7">×</button>
+<button id="divide_c7">÷</button>
+
+<script type="text/javascript">
+	// 获取按钮
+	var addBtn_c7 = document.getElementById('add_c7');
+	var subtractBtn_c7 = document.getElementById('subtract_c7');
+	var multiplyBtn_c7 = document.getElementById('multiply_c7');
+	var divideBtn_c7 = document.getElementById('divide_c7');
+	// 获取 id 为 result 的元素
+	var resultNum = document.getElementById("result_c7");
+	//定义两个全局变量
+	var a_int_c7;
+	var b_int_c7;
+	// 点击方法      //// 为按钮添加点击方法
+	addBtn_c7.onclick = function() {
+		getInputNum_c7();
+		//alert(addition(a_int, b_int))
+		var result = addition(a_int, b_int);
+		
+		// 第一种方法
+		var resultHtml = "<p>" + result + "</p>";
+		resultNum.innerHTML = resultHtml;
+	};
+	subtractBtn_c7.onclick = function() {
+		getInputNum_c7();
+		//alert(subtraction(a_int, b_int))
+		var result = subtraction(a_int, b_int);
+
+		// 第二种方法
+		resultNum.innerHTML = String(result);
+	}
+	multiplyBtn_c7.onclick = function() {
+		getInputNum_c7();
+		//alert(multiplication(a_int, b_int))
+		var result = multiplication(a_int, b_int);
+		resultNum.innerHTML = String(result);
+	};
+	divideBtn_c7.onclick = function() {
+		getInputNum_c7();
+		//alert(division(a_int, b_int))
+		var result = division(a_int, b_int);
+		resultNum.innerHTML = String(result);
+	};
+	//函数方法      //// 获取 input 的值并转为数字
+	function getInputNum_c7() {
+		// 这里是局部变量
+		var a = document.getElementById('num1_c7').value;
+		var b = document.getElementById('num2_c7').value;
+		// 将转化后的数字赋值给全局变量
+		a_int = parseInt(a, 10);
+		b_int = parseInt(b, 10);
+	}
+	// 加、减、乘、除
+	function addition(x, y) {
+		return x + y;
+	}
+	function subtraction(x, y) {
+		return x - y;
+	}
+	function multiplication(x, y) {
+		return x * y;
+	}
+	function division(x, y) {
+		if (y == 0) {
+			alert("0不能做除数");
+			return;
+		} else {
+			return x / y;
+		}
+	}
+
+
+
+
+
+
+	
+</script>
 
 
 
