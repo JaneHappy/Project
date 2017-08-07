@@ -6,10 +6,15 @@
 </head>
 <body>
 
+
+
+<!--
+@2017.8.7
+
 	<h1>引入文件</h1>
 	<h1>斌叔的日记本</h1>
 	<p>标题：</p>
-	<input name="title" id="title"></input>  <!-- 这里的结束标签</input>也可以不用写 -->
+	<input name="title" id="title"></input>    <!-- 这里的结束标签</input>也可以不用写 - ->
 	<p>内容：</p>
 	<textarea id="content" cols="30" rows="10"></textarea>
 	<p><button id="submit">提交</button></p>
@@ -35,6 +40,55 @@
 		var history_element = document.getElementById('history');
 		var history = history_element.innerHTML;
 	</script>
+-->
+
+
+
+
+<!-- 2017.8.8  1:09 -->
+
+	<!--  <h1>引入文件</h1>  -->
+
+	<h1>斌叔的日记本</h1>
+	<p>标题：</p>
+	<input id="title"></input>  <!-- 这里的结束标签</input>也可以不用写 -->
+	<p>内容：</p>
+	<textarea id="content" cols="30" rows="10"></textarea>
+	<p><button id="submit">提交</button></p>
+	<p>以往内容：</p>
+	<div id="history">
+		<!--
+		<hr>
+
+		<p>标题：+ title +</p>
+		<p>内容：+ content + </p>
+		<hr>
+		-->
+	</div>
+
+	<script type="text/javascript">
+		var submit = document.getElementById('submit');
+		submit.onclick = function() {
+			var title_element = document.getElementById("title");
+			var title = title_element.value;
+			var content_element = document.getElementById("content");
+			var content = content_element.value;
+
+			alert(title);	//校验下，有没有获取到用户输入的标题
+			alert(content);	//校验下，有没有获取到用户输入的内容
+
+			var history_element = document.getElementById('history');
+			var history = history_element.innerHTML;
+			history = history + '<p>标题：' + title + '</p>';
+			history = history + '<p>内容：' + content + '</p>';
+			history = history + '<hr>';
+			// alert(history);
+			history_element.innerHTML = history;
+		};
+	</script>
+
+
+
 
 </body>
 </html>
