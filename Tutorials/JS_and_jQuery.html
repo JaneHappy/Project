@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+
+
+
+<!--  Class 1  -->
+<script type="text/javascript">
+	// 声明变量a、b，分别赋值为5和8
+	// 声明一个变量a，赋值为5
+	var a = 5;
+	// 声明一个变量b，赋值为8
+	var b = 8;
+	// 声明一个变量c，赋值为a+b
+	var c = a + b;
+
+	// 弹出运算结果
+	//alert(c);
+</script>
+
+
+
+<!--  Class 2  -->
+<script type="text/javascript">
+	var m = 5; //3; //3;
+	var n = 2; //0; //2;
+
+	var a = m + n;
+	var b = m - n;
+	var c = m * n;
+
+	//alert(a);
+	//alert(b);
+	//alert(c);
+
+	var d;
+	if (n == 0) {
+		alert("0不能做除数");
+	} else {
+		d = m / n;
+		//alert(d);
+		d = m % n;
+		//alert(d);
+	}
+</script>
+
+
+
+<!--  Class 3  -->
+<script type="text/javascript">
+	// 加法
+	function addition(x, y) {
+		return x + y;
+	}
+	//var result = addition(5, 10);
+	//alert(result);
+	// 减法
+	function subtraction(x, y) {
+		return x - y;
+	}
+	// 乘法
+	function multiplication(x, y) {
+		return x * y;
+	}
+	// 除法
+	function division(x, y) {
+		if (y == 0) {
+			alert("0不能做除数"); // divide zero Error
+			return;
+		} else {
+			return x / y;
+		}
+	}
+</script>
+
+
+
+<!--  Class 4  -->
+<form>
+	第一个数字：<br>
+	<input type="text" name="num1" value="100">
+	<br>
+	第二个数字：<br>
+	<input type="text" name="num2" value="200">
+	<br>
+</form>
+<script type="text/javascript">
+	var a = document.getElementById('num1').value;
+	var b = document.getElementById('num2').value;
+
+	alert(a);
+	alert(b);
+</script>
+
+
+
+</body>
+</html>
