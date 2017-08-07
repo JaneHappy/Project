@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+	<title>Title</title>
+	<!-- 
+	这里引入的是网上的资源文件
+	
+	一个JavaScript中常用的语句  console.log();   向web控制台输出一条消息
+	浏览器中有一个控制台，在里面我们可以发现许多新奇的东西
+	在浏览器中右击空白区域，选择'检查'，就可以打开啦
+	然后再点击console选项卡，就可以看到我们输出的消息
+	 -->
+</head>
+<body style="...">
+
+
+	<!-- Class 1 -->
+	<script type="text/javascript">
+		console.log('hello world!');
+		
+		// 再接着了解jQuery. 要想使用它的组件，还需要进行一个准备
+		// 这是jQuery的一个文档就绪事件，等文件加载之后运行函数
+		$(document).ready(function() {
+			console.log('这是我的第一个 console！');
+		});
+		// $就相当于document.getElementById,也是在获取HTML元素. 然后在$后面的()里写上id，像这样：$('#id')
+	</script>
+
+
+
+	<!-- Class 2 -->
+	<!--
+	怎么实现数据的获取
+	这个神奇的技术就是AJAX
+	是一种与服务器交换数据的技术，可以在不重新载入整个页面的情况下更新网页的一部分。
+	在jQuery中就封装了AJAX方法
+	它的语法是这样的：
+
+	$.ajax({});
+	这就是这个方法
+
+	$.ajax({type:'GET',});
+	这个type:'GET'是说明获取的类型是GET
+
+	$.ajax({type:'GET',url:'http://resource.haorenao.cn/teas2.json',});
+	这个url就是我们存放数据的地址
+	我们要发送请求到这里
+
+	$.ajax({type:'GET',url:'http://resource.haorenao.cn/teas2.json',success: function(data){}});
+	这个函数里面是当这个过程成功的话所要执行的程序
+
+	不过你可能不知道在哪里看它是否成功
+	在函数里写上console.log(data)，然后在浏览器中打开控制台
+	你会发现控制台似乎大概可能是显示出了东西
+	-->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$.ajax({
+				type: 'GET',
+				url: "http://resource.haorenao.cn/teas2.json",
+				success: function(data) {
+					console.log(data);
+				}
+			});
+		});
+	</script>
+
+
+
+	<!-- Class 3 -->
+	<!--
+	数组可以用一个变量名存储所有的值，并且可以用变量名访问任何一个值
+
+	首先我们要创建一个数组
+	今天说一个最简单的方法：
+	var myCars=['Saab','Volvo','BMW'];
+	这个呢就是我们要存储的数据，注意要用' '包围，并且数据之间要用,分隔开
+	数组还有很多属性呢，像：length
+	下面创建一个名为arr的数组，存上5个数据，加上console.log(arr.length);然后在控制台看看输出了什么
+
+	知道这个后，再告诉你怎么找到这个数组中的某一个数据
+	上面说过，数组中数据存储是有id的，这个id是从0开始的，而不是1哦！
+	这个id一定要记住，如果我们要想输出第3个数据的话，就需要这样写：
+	console.log(arr[2]);
+	因为第一个数据id是0，第二个数据是1，所以第三个数据是2
+	这里直接用数组名后面跟上方括号包裹的id就可以啦
+
+	数组还有其他的用法，后续课程会介绍哦
+	-->
+	<script type="text/javascript">
+		var myCars = ['Saab', 'Volvo', 'BMW'];
+		console.log(myCars.length);
+		console.log(myCars[1]);
+	</script>
+
+
+
+	<!-- Class 4,  <title>Title</title> -->
+	<!--
+	上节课我们学习了数组，知道了可以随便访问数组中的每一个数据
+	那么如果我想要访问到数组的所有数据应该怎么办呢
+	那就要用到jQuery的一个方法，遍历整个数组
+	这样就能访问数组中的每一项了
+
+	遍历意为'移动'，用于根据其相对于其他元素的关系来'查找'（或选取）HTML 元素。以某项选择开始，并沿着这个选择移动，直到抵达您期望的元素为止
+	遍历不只是对于HTML元素，对于数组也是有效的，jQuery中有一个遍历的方法，那就是each(),
+	对于数组，可以这样写：$.each(array,function(value){})
+	array为数组的名字，在函数里面写上对数组每一项规定运行的代码
+	现在创建一个名为arr_each的数组，里面存储5个数据，然后进行遍历
+	在编辑器写上如上代码，看看value到底是什么
+
+	是不是一串数字！是从0开始的，到这个数组的length-1结束
+	有了这个value，我们就可以对数组的每一项操作啦！
+	假如我们要输出每一项，就在函数中这样写：console.log(arr_each[value]);
+
+	这个数组的操作你一定要熟悉，这是JavaScript中最重要的知识点
+	等我们再学习两个知识点后，你就能独立做项目啦
+	-->
+	<script>
+		$(document).ready(function() {
+			var arr_each = ['one', 'two', 'three', 'four', 'five'];
+			$.each(arr_each, function (value) {
+				//console.log(value);
+				console.log(arr_each[value]);
+			})
+
+			var arr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n'];
+			$.each(arr, function(a) {
+				console.log(arr[a]);
+			})
+		});
+	</script>
+
+
+
+	<!-- Class 5,  <body style="..."> -->
+	<!--
+	在JavaScript的初级课程中我们介绍了一点点字符串的拼接
+	你已经知道了可以在JavaScript中写HTML标签语句
+	今天我们继续深入了解
+	假如现在我想将获取到的数据放在HTML中的div里，但是HTML中并没有div标签
+	我们可以在JavaScript中创建一个div然后插入到HTML中
+
+	字符串的拼接你已经学过了，包括在JavaScript中编写HTML语句，这里也可以在写的同时为标签加上css样式
+	其实放在html中就相当于这样：
+
+	接下来我们说说这个append
+	虽然我们在JavaScript中写好了语句，但是这些语句就像没有家的孩子一样，它们谁也不属于，既不属于JavaScript，也属于HTML
+	所以我们要用这个append让它属于HTML，同HTML连接上，插入到HTML中
+
+	这个方法有几个参数：
+	$('#all_teas').append(html);
+	首先，'#all_teas'是选择一个元素，append(html)代表着我们要插入html，那么插入到哪里呢
+	就是我们之前选择的元素，也就是id为all_teas的元素
+
+	我们先写出这个例子的HTML代码，然后再用append插入
+	其实呢，插入进去之后，这个html是被#all_teas包围着的，就像这样：
+	虽然我们在HTML中没有写这个标签，但是我们通过JavaScript将这个标签创建出来并插入到HTML中了
+
+	这个语法我们可以这样记$(插入位置).append(要插入的)
+	第一个括号中的是我们要插入到的位置，第二个括号中的是要插入的标签代码
+	-->
+
+	<div style="width: 100%; text-align: center; margin-top: 50px;">
+		<h1>斌叔的茶叶铺子</h1>
+	</div>
+	<hr>
+	<div style="width: 100%; text-align: center;">
+		<h3 style="color: gray;">所有茶叶</h3>
+	</div>
+	<div id="all_teas">
+		
+	</div>
+
+	<script type="text/javascript">
+		$(document).ready(function () {
+			var html = '<div style="width: 333px; height: 300px; float: left; text-align: center; margin: 10px 0;">'
+				+ '<h1 style="margin: 0">' + 'hi' + '</h1>'
+				+ '<p>价格：' + '20元' + '</p>'
+				+ '</div>';
+			//$('body').append(html);
+			$('#all_teas').append(html);
+		});
+	</script>
+
+	<div id="div"></div>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var p = "<p>这是插入的p标签</p>"
+			$('#div').append(p);  //$('div').append(p);
+		})
+	</script>
+
+
+
+	<!-- Class 6 -->
+	<!--
+	你已经学会了很多高级语法了呢
+	包括jQuery的一些用法
+	今天我们就要开始进阶练习啦
+	我们要做一个项目
+
+	一个可以实现数据交互的jQuery项目
+	先从服务器获取数据，然后将数据显示在页面上
+	听起来很麻烦，其实知识点我们都已经学过啦！
+	我们先捋捋思路
+
+	这个项目我们是从服务器上获取斌叔已经为你写好的文件，里面有一些数据可供你使用
+	首先，我们要引入jQuery文件，使用jQuery的ajax来向服务器发送请求
+	当服务器返回给我们数据时，这些数据其实是存储在一个数组中的
+	其次，我们要对这个数组进行遍历，找到每一个数据
+	最后，我们通过javascript代码创建标签显示数据，然后append到html中
+	-->
+
+
+
+
+</body>
+</html>
