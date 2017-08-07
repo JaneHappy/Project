@@ -123,6 +123,58 @@
 
 
 
+<!--  Class 5  -->
+<form>
+	第一个数字：<br>
+	<input type="text" name="num1">
+	<br>
+	第二个数字：<br>
+	<input type="text" name="num2">
+	<br>
+</form>
+
+<button id="add">+</button>
+<script type="text/javascript">
+	// 获取加号按钮
+	var addBtn = document.getElementById('add');
+	//addBtn.onmouseover = function () {
+	//	alert("我被点击了");
+	//}
+	// 为按钮添加点击方法
+	addBtn.onclick = function () {
+		// 获取输入的 a 和 b
+		var a = document.getElementById('num1').value;
+		var b = document.getElementById('num2').value;
+		// 将 a 和 b 转化为数字
+		var a_int = parseInt(a, 10);
+		var b_int = parseInt(b, 10);
+		// 调用加法
+		var result = addition(a_int, b_int);
+		alert(result);
+	};
+	// 加法函数
+	function addition(x, y) {
+		return x + y;
+	}
+</script>
+
+
+
+<!-- Class 6 -->
+<form>
+	第一个数字：<br>
+	<input type="text" name="num1">
+	<br>
+	第二个数字：<br>
+	<input type="text" name="num2">
+	<br>
+</form>
+
+<button id="add">+</button>
+<button id="substract">-</button>
+<button id="multiply">×</button>
+<button id="divide">÷</button>
+
 
 
 

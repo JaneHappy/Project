@@ -105,18 +105,23 @@ Class 3
 		//var value = input1.value;
 	</script>
 
-	<input type="text" name="input1">
+	<!--
+	<input type="text" name="input1" />
+	
+	<button id="btn1" text="btn" />
+	-->
+	<input type="text" name="input1" id="input1" />
 	<button id="btn1">确定</button>
 	<script type="text/javascript">
 		//var i1 = document.getElementById("input1").value;
 		var btn1 = document.getElementById("btn1");
 		btn1.onclick = function bale(){
 			var i1 = document.getElementById("input1")
-			alert(1)
+			//alert(1)
 			var v1 = i1.value;
 			alert(v1)
 		};
-		//btn1.onmouseover = ale;
+		btn1.onmouseover = bale;
 	</script>
 	<!--
 	还有很多事件
