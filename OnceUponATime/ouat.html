@@ -5,6 +5,71 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--<link rel="stylesheet" href="assets_css/main.css" />-->
+		<link rel="stylesheet" type="text/css" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script type="text/javascript" src="http://cdn.static.runoob.com/libs/jquery/2.2.1/jquery.min.js"></script>
+		<script type="text/javascript" src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+
+
+
+			<script type="text/javascript">
+
+				//jquery.min.js
+
+
+				//skel.min.js
+
+
+				//util.js
+				
+				
+				//main.js
+				(function($) {
+					// Breakpoints.
+					skel.breakpoints({
+						xlarge:	'(max-width: 1680px)',
+						large:	'(max-width: 1280px)',
+						medium:	'(max-width: 980px)',
+						small:	'(max-width: 736px)',
+						xsmall:	'(max-width: 480px)'
+					});
+					$(function() {
+						var	$window = $(window), $body = $('body');
+						// Disable animations/transitions until the page has loaded.
+						$body.addClass('is-loading');
+						$window.on('load', function() {
+							window.setTimeout(function() {
+								$body.removeClass('is-loading');
+							}, 100);
+						});
+						// Prioritize "important" elements on medium.
+						skel.on('+medium -medium', function() {
+							$.prioritize('.important\\28 medium\\29', skel.breakpoint('medium').active );
+						});
+						// Off-Canvas Navigation.
+						// Navigation Panel.
+						$('<div id="navPanel">' + $('#nav').html() + '<a href="#navPanel" class="close"></a>' + '</div>' ).appendTo($body).panel({
+							delay: 500,
+							hideOnClick: true,
+							hideOnSwipe: true,
+							resetScroll: true,
+							resetForms: true,
+							side: 'left'
+						});
+						// Fix: Remove transitions on WP<10 (poor/buggy performance).
+						if (skel.vars.os == 'wp' && skel.vars.osVersion < 10)
+							$('#navPanel').css('transition', 'none');
+					});
+				})(jQuery);
+
+			</script>
+
+
+
+
+
+
 
 		<style type="text/css">
 
@@ -74,7 +139,7 @@
 			.container {
 				width: 80em;
 			}
-
+/*
 			@media screen and (max-width: 1680px) {
 				.container.\31 25\25 {
 					width: 100%;
@@ -174,7 +239,7 @@
 					width: 90% !important;
 				}
 			}
-
+*/
 			/* Grid */
 			.row {
 				border-bottom: solid 1px transparent;
@@ -200,6 +265,7 @@
 			.row.uniform > * > :last-child {
 				margin-bottom: 0;
 			}
+/*
 			.row.\30 \25 > * {
 				padding: 0 0 0 0em;
 			}
@@ -1235,7 +1301,7 @@
 					margin-left: 8.33333%;
 				}
 			}
-
+*/
 			/* Basic */
 			@-ms-viewport {
 				width: device-width;
@@ -1396,7 +1462,7 @@
 				max-width: 75em;
 				margin: 0 auto;
 			}
-
+/*
 			@media screen and (max-width: 1280px) {
 				.inner {
 					max-width: 90%;
@@ -1407,7 +1473,7 @@
 					max-width: 85%;
 				}
 			}
-
+*/
 			/* Section/Article */
 			section.special, article.special {
 				text-align: center;
@@ -1444,6 +1510,7 @@
 			section.wrapper.style1 h3, article.wrapper.style1 h3 {
 				color: #FFF;
 			}
+/*
 			@media screen and (max-width: 980px) {
 				section.wrapper, article.wrapper {
 					padding: 2em 0;
@@ -1468,6 +1535,7 @@
 					text-align: center;
 				}
 			}
+*/
 			header p {
 				color: #bbb;
 				position: relative;
@@ -1723,11 +1791,9 @@
 				border-color: #5385c1;
 				box-shadow: 0 0 0 1px #5385c1;
 			}
-
 			input[type="checkbox"] + label:before {
 				border-radius: 0;
 			}
-
 			input[type="radio"] + label:before {
 				border-radius: 100%;
 			}
@@ -1736,72 +1802,59 @@
 				color: #bbb !important;
 				opacity: 1.0;
 			}
-
 			:-moz-placeholder {
 				color: #bbb !important;
 				opacity: 1.0;
 			}
-
 			::-moz-placeholder {
 				color: #bbb !important;
 				opacity: 1.0;
 			}
-
 			:-ms-input-placeholder {
 				color: #bbb !important;
 				opacity: 1.0;
 			}
-
 			.formerize-placeholder {
 				color: #bbb !important;
 				opacity: 1.0;
 			}
 
 			/* Box */
-
 			.box {
 				border: solid 1px #dbdbdb;
 				margin-bottom: 2em;
 				padding: 1.5em;
 			}
-
 			.box > :last-child,
 			.box > :last-child > :last-child,
 			.box > :last-child > :last-child > :last-child {
 				margin-bottom: 0;
 			}
-
 			.box.alt {
 				border: 0;
 				border-radius: 0;
 				padding: 0;
 			}
-
 			.box.person {
 				border: solid 1px rgba(255, 255, 255, 0.25);
 				padding: 3em 1.5em;
 			}
-
 			.box.person h3 {
 				margin: 0;
 			}
-
 			.box.person .image {
 				margin-bottom: 1em;
 			}
-
 			.box.person .image img {
 				max-width: 100%;
 			}
 
 			/* Icon */
-
 			.icon {
 				text-decoration: none;
 				border-bottom: none;
 				position: relative;
 			}
-
 			.icon:before {
 				-moz-osx-font-smoothing: grayscale;
 				-webkit-font-smoothing: antialiased;
@@ -1810,166 +1863,133 @@
 				font-weight: normal;
 				text-transform: none !important;
 			}
-
 			.icon > .label {
 				display: none;
 			}
 
 			/* Image */
-
 			.image {
 				border-radius: 0;
 				border: 0;
 				display: inline-block;
 				position: relative;
 			}
-
 			.image img {
 				border-radius: 0;
 				display: block;
 			}
-
 			.image.left, .image.right {
 				max-width: 40%;
 			}
-
 			.image.left img, .image.right img {
 				width: 100%;
 			}
-
 			.image.round img {
 				border-radius: 100%;
 			}
-
 			.image.left {
 				float: left;
 				padding: 0 1.5em 1em 0;
 				top: 0.25em;
 			}
-
 			.image.right {
 				float: right;
 				padding: 0 0 1em 1.5em;
 				top: 0.25em;
 			}
-
 			.image.fit {
 				display: block;
 				margin: 0 0 2em 0;
 				width: 100%;
 			}
-
 			.image.fit img {
 				width: 100%;
 			}
-
 			.image.main {
 				display: block;
 				margin: 0 0 3em 0;
 				width: 100%;
 			}
-
 			.image.main img {
 				width: 100%;
 			}
 
 			/* List */
-
 			ol {
 				list-style: decimal;
 				margin: 0 0 2em 0;
 				padding-left: 1.25em;
 			}
-
 			ol li {
 				padding-left: 0.25em;
 			}
-
 			ul {
 				list-style: disc;
 				margin: 0 0 2em 0;
 				padding-left: 1em;
 			}
-
 			ul li {
 				padding-left: 0.5em;
 			}
-
 			ul.alt {
 				list-style: none;
 				padding-left: 0;
 			}
-
 			ul.alt li {
 				border-top: solid 1px #dbdbdb;
 				padding: 0.5em 0;
 			}
-
 			ul.alt li:first-child {
 				border-top: 0;
 				padding-top: 0;
 			}
-
 			ul.icons {
 				cursor: default;
 				list-style: none;
 				padding-left: 0;
 			}
-
 			ul.icons li {
 				display: inline-block;
 				padding: 0 1em 0 0;
 			}
-
 			ul.icons li:last-child {
 				padding-right: 0;
 			}
-
 			ul.icons li .icon:before {
 				font-size: 2em;
 			}
-
 			ul.actions {
 				cursor: default;
 				list-style: none;
 				padding-left: 0;
 			}
-
 			ul.actions li {
 				display: inline-block;
 				padding: 0 1em 0 0;
 				vertical-align: middle;
 			}
-
 			ul.actions li:last-child {
 				padding-right: 0;
 				}
-
 			ul.actions.small li {
 				padding: 0 0.5em 0 0;
 			}
-
 			ul.actions.vertical li {
 				display: block;
 				padding: 1em 0 0 0;
 			}
-
 			ul.actions.vertical li:first-child {
 				padding-top: 0;
 			}
-
 			ul.actions.vertical li > * {
 				margin-bottom: 0;
 			}
-
 			ul.actions.vertical.small li {
 				padding: 0.5em 0 0 0;
 			}
-
 			ul.actions.vertical.small li:first-child {
 				padding-top: 0;
 			}
-
 			ul.actions.fit {
 				display: table;
 				margin-left: -1em;
@@ -1977,55 +1997,44 @@
 				table-layout: fixed;
 				width: calc(100% + 1em);
 			}
-
 			ul.actions.fit li {
 				display: table-cell;
 				padding: 0 0 0 1em;
 			}
-
 			ul.actions.fit li > * {
 				margin-bottom: 0;
 			}
-
 			ul.actions.fit.small {
 				margin-left: -0.5em;
 				width: calc(100% + 0.5em);
 			}
-
 			ul.actions.fit.small li {
 				padding: 0 0 0 0.5em;
 			}
 
 			@media screen and (max-width: 480px) {
-
 				ul.actions {
 					margin: 0 0 2em 0;
 				}
-
 				ul.actions li {
 					padding: 1em 0 0 0;
 					display: block;
 					text-align: center;
 					width: 100%;
 				}
-
 				ul.actions li:first-child {
 					padding-top: 0;
 				}
-
 				ul.actions li > * {
 					width: 100%;
 					margin: 0 !important;
 				}
-
 				ul.actions li > *.icon:before {
 					margin-left: -2em;
 				}
-
 				ul.actions.small li {
 					padding: 0.5em 0 0 0;
 				}
-
 				ul.actions.small li:first-child {
 					padding-top: 0;
 				}
@@ -2034,43 +2043,35 @@
 			dl {
 				margin: 0 0 2em 0;
 			}
-
 			dl dt {
 				display: block;
 				font-weight: 600;
 				margin: 0 0 1em 0;
 			}
-
 			dl dd {
 				margin-left: 2em;
 			}
 
 			/* Table */
-
 			.table-wrapper {
 				-webkit-overflow-scrolling: touch;
 				overflow-x: auto;
 			}
-
 			table {
 				margin: 0 0 2em 0;
 				width: 100%;
 			}
-
 			table tbody tr {
 				border: solid 1px #dbdbdb;
 				border-left: 0;
 				border-right: 0;
 			}
-
 			table tbody tr:nth-child(2n + 1) {
 				background-color: rgba(144, 144, 144, 0.075);
 			}
-
 			table td {
 				padding: 0.75em 0.75em;
 			}
-
 			table th {
 				color: #555;
 				font-size: 0.9em;
@@ -2078,43 +2079,34 @@
 				padding: 0 0.75em 0.75em 0.75em;
 				text-align: left;
 			}
-
 			table thead {
 				border-bottom: solid 2px #dbdbdb;
 			}
-
 			table tfoot {
 				border-top: solid 2px #dbdbdb;
 			}
-
 			table.alt {
 				border-collapse: separate;
 			}
-
 			table.alt tbody tr td {
 				border: solid 1px #dbdbdb;
 				border-left-width: 0;
 				border-top-width: 0;
 			}
-
 			table.alt tbody tr td:first-child {
 				border-left-width: 1px;
 			}
-
 			table.alt tbody tr:first-child td {
 				border-top-width: 1px;
 			}
-
 			table.alt thead {
 				border-bottom: 0;
 			}
-
 			table.alt tfoot {
 				border-top: 0;
 			}
 
 			/* Button */
-
 			input[type="submit"],
 			input[type="reset"],
 			input[type="button"],
@@ -2600,42 +2592,127 @@
 		<!-- Banner -->
 			<section id="banner">
 				<!-- <img src="imgs/ouat_title_2.jpg" alt="banner" /> -->
-				<h1>Once Upon A Time</h1>
-				<p>Welcome to this American fantasy drama television series.</p>
-				<p>This show takes place in the fictional seaside town of Storybrooke, Maine.</p> <!--, whose residents are characters from various fairy tales transported to the "real world" town and robbed of their original memories by a powerful curse-->
+				<h1 id="banner_h1">Once Upon A Time</h1>
+				<p id="banner_p1">Welcome to this American fantasy drama television series.</p>
+				<p id="banner_p2">This show takes place in the fictional seaside town of Storybrooke, Maine.</p> <!--, whose residents are characters from various fairy tales transported to the "real world" town and robbed of their original memories by a powerful curse-->
 			</section>
+			<script type="text/javascript">
+				$('#banner').mouseover(function() {
+					//alert("Welcome to Storybrooke!")
+					$('#banner').fadeTo("slow", 0.8);
+					$('#banner_h1').css("color", "#5385d1"); //#5385c1
+					$('#banner_h1').css("font-weight", "bold");
+				})
+			</script>
 
 		<!-- One -->
 			<section id="one" class="wrapper">
 				<div class="inner">
 					<div class="flex flex-3">
-						<article>
+						<article id="my_article_one_1">
 							<header>
 								<h3>Enchanted Forest</h3>
 							</header>
-							<p>The Enchanted Forest is a realm within Fairy Tale Land. The actual spread and scope of the Enchanted Forest is currently unknown. However they were later united during the Ogre Wars, which played a part in the formation of the War Council that was formed by Prince Charming and served as the catalysts in the backstories involving Rumpelstiltskin and Regina, the Evil Queen.</p>
+							<p id="my_article_one_p1">The Enchanted Forest is a realm within Fairy Tale Land. The actual spread and scope of the Enchanted Forest is currently unknown. However they were later united during the Ogre Wars, which played a part in the formation of the War Council that was formed by Prince Charming and served as the catalysts in the backstories involving Rumpelstiltskin and Regina, the Evil Queen.</p>
 							<footer>
 								<a href="#" class="button special">More</a>
 							</footer>
 						</article>
-						<article>
+						<article id="my_article_one_2">
 							<header>
 								<h3>Land Without Magic</h3>
 							</header>
-							<p>The Land Without Magic (often dubbed the Real World) is shown to be a magic-less land not bound to the Land With Magic Universe. It is often said that travelling to the Land Without Magic is hard. However, it is shown that various characters from different lands are able to reach the Land Without Magic by different means. For example, the Snow Queen came to the Land Without Magic in 1982 with the Apprentice's help. Other means of travelling to this land are magical doors created by the Apprentice, magic beans, or the Dark Curse that is responsible for the creation of Storybrooke in Maine.</p>
+							<p id="my_article_one_p2">The Land Without Magic (often dubbed the Real World) is shown to be a magic-less land not bound to the Land With Magic Universe. It is often said that travelling to the Land Without Magic is hard. However, it is shown that various characters from different lands are able to reach the Land Without Magic by different means. For example, the Snow Queen came to the Land Without Magic in 1982 with the Apprentice's help. Other means of travelling to this land are magical doors created by the Apprentice, magic beans, or the Dark Curse that is responsible for the creation of Storybrooke in Maine.</p>
 							<footer>
 								<a href="#" class="button special">More</a>
 							</footer>
 						</article>
-						<article>
+						<article id="my_article_one_3">
 							<header>
 								<h3>Expanded Settings<br/></h3>
 							</header>
-							<p>The realms and worlds featured in the series are mostly based on many fairy tales, mythologies and real life locations and are magical, unlike the real world which is dubbed the Land Without Magic. Just like the Enchanted Forest, the other realms and worlds were affected by the Evil Queen’s curse, but indirectly, merely freezing them in time and state for twenty-eight years.</p>
+							<p id="my_article_one_p3">The realms and worlds featured in the series are mostly based on many fairy tales, mythologies and real life locations and are magical, unlike the real world which is dubbed the Land Without Magic. Just like the Enchanted Forest, the other realms and worlds were affected by the Evil Queen’s curse, but indirectly, merely freezing them in time and state for twenty-eight years.</p>
 							<footer>
 								<a href="#" class="button special">More</a>
 							</footer>
 						</article>
+					</div>
+				</div>
+			</section>
+			<script type="text/javascript">
+				$('#one').click(function() {
+					//class="my_article_one"  $('.my_article_one').toggle();
+					//$('.inner').toggle();
+					$('#my_article_one_1').show()
+					$('#my_article_one_2').show()
+					$('#my_article_one_3').show()
+					//$('#my_article_one_1').slideDown(3000)
+					//$('#my_article_one_2').slideUp(3000)
+					//$('#my_article_one_3').slideToggle(3000)
+				})
+				$('#my_article_one_1').click(function() {
+					$('#my_article_one_1').slideToggle(3000)
+				});
+				$('#my_article_one_2').click(function() {
+					$('#my_article_one_2').slideToggle(3000)
+				});
+				$('#my_article_one_3').click(function() {
+					$('#my_article_one_3').slideToggle(3000)
+				});
+				//$('#my_article_one_1').click(function() {
+					//$('#my_article_one_2').hide()
+					//$('#my_article_one_3').hide()
+					//$('#my_article_one_1').show(3000)
+					//$('my_article_one_p1').css('color', 'red')
+				//});
+			</script>
+
+		<!-- Two(my) -->
+			<section id="my_two" class="wrapper style1 special">
+				<div class="inner">
+					<header>
+						<h2>Characters</h2>
+						<p>Cast as these characters</p>
+					</header>
+
+					<div id="myCarousel" class="carousel slide">
+						<ol class="carousel-indicators">
+							<li data-target="#myCarousel" data-slide-to="0" class="active"><>
+							<li data-target="#myCarousel" data-slide-to="1"><>
+							<li data-target="#myCarousel" data-slide-to="2"><>
+							<li data-target="#myCarousel" data-slide-to="3"><>
+						</ol>
+						<div class="carousel-inner">
+						<div class="item active" class="box person">
+							<div class="image round">
+								<img src="https://github.com/JaneHappy/Project/blob/master/OnceUponATime/imgs/emma_6.jpg?raw=true" alt="Person 1" height="200" />
+							</div>
+							<h3>Emma Swan</h3>
+							<p>Jennifer Morrison</p>
+						</div>
+						<div class="item" class="box person">
+							<div class="image round">
+								<img src="https://github.com/JaneHappy/Project/blob/master/OnceUponATime/imgs/henry_2.jpg?raw=true" alt="Person 2" height="200" />
+							</div>
+							<h3>Henry Mills</h3>
+							<p>Jared S. Gilmore</p>
+						</div>
+						<div class="item" class="box person">
+							<div class="image round">
+								<img src="https://github.com/JaneHappy/Project/blob/master/OnceUponATime/imgs/regina_2.jpg?raw=true" alt="Person 3" height="200" />
+							</div>
+							<h3>Evil Queen</h3> <!--/ Regina Mills-->
+							<p>Lana Parrilla</p>
+						</div>
+						<div class="item" class="box person">
+							<div class="image round">
+								<img src="https://github.com/JaneHappy/Project/blob/master/OnceUponATime/imgs/snow_1.jpg?raw=true" alt="Person 4" height="200" />
+							</div>
+							<h3>Snow White,</h3><!--/ Mary Margaret Blanchard-->
+							<h3>Prince Charming</h3>
+							<p>Ginnifer Goodwin, Josh Dallas</p>
+						</div>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -2647,31 +2724,32 @@
 						<h2>Characters</h2>
 						<p>Cast as these characters</p>
 					</header>
+
 					<div class="flex flex-4">
 						<div class="box person">
 							<div class="image round">
-								<img src="https://github.com/JaneHappy/Project/blob/master/OnceUponATime/imgs/emma_6.jpg?raw=true" alt="Person 1" />
+								<img src="https://github.com/JaneHappy/Project/blob/master/OnceUponATime/imgs/emma_6.jpg?raw=true" alt="Person 1" height="200" />
 							</div>
 							<h3>Emma Swan</h3>
 							<p>Jennifer Morrison</p>
 						</div>
 						<div class="box person">
 							<div class="image round">
-								<img src="https://github.com/JaneHappy/Project/blob/master/OnceUponATime/imgs/henry_2.jpg?raw=true" alt="Person 2" />
+								<img src="https://github.com/JaneHappy/Project/blob/master/OnceUponATime/imgs/henry_2.jpg?raw=true" alt="Person 2" height="200" />
 							</div>
 							<h3>Henry Mills</h3>
 							<p>Jared S. Gilmore</p>
 						</div>
 						<div class="box person">
 							<div class="image round">
-								<img src="https://github.com/JaneHappy/Project/blob/master/OnceUponATime/imgs/regina_2.jpg?raw=true" alt="Person 3" />
+								<img src="https://github.com/JaneHappy/Project/blob/master/OnceUponATime/imgs/regina_2.jpg?raw=true" alt="Person 3" height="200" />
 							</div>
 							<h3>Evil Queen</h3> <!--/ Regina Mills-->
 							<p>Lana Parrilla</p>
 						</div>
 						<div class="box person">
 							<div class="image round">
-								<img src="https://github.com/JaneHappy/Project/blob/master/OnceUponATime/imgs/snow_1.jpg?raw=true" alt="Person 4" />
+								<img src="https://github.com/JaneHappy/Project/blob/master/OnceUponATime/imgs/snow_1.jpg?raw=true" alt="Person 4" height="200" />
 							</div>
 							<h3>Snow White,</h3><!--/ Mary Margaret Blanchard-->
 							<h3>Prince Charming</h3>
@@ -2742,58 +2820,67 @@
 			<script src="assets_js/skel.min.js"></script>
 			<script src="assets_js/util.js"></script>
 			<script src="assets_js/main.js"></script>-->
-
 			<script type="text/javascript">
+/*
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="index.html" class="logo">OUAT</a>
+					<nav id="nav"></nav>
+					<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
 
-				//jquery.min.js
+		<!-- Banner -->
+			<section id="banner">
+				<h1 id="banner_h1"></h1>	<p id="banner_p1">	<p id="banner_p2">
 
+		<!-- One -->
+			<section id="one" class="wrapper">
+				<div class="inner">
+					<div class="flex flex-3">
+						<article>	<header><h3><p><footer>
+						<article>	<header><h3><p><footer>
+						<article>	<header><h3><br/><p><footer>
 
-				//skel.min.js
+		<!-- Two -->
+			<section id="two" class="wrapper style1 special">
+				<div class="inner">
+					<header>	<h2><p>
+					<div class="flex flex-4">
+						<div class="box person">
+							<div class="image round">	<h3><p>
+						<div class="box person">
+							<div class="image round">	<h3><p>
+						<div class="box person">
+							<div class="image round">	<h3><p>
+						<div class="box person">
+							<div class="image round">	<h3><h3><p>
 
+		<!-- Three -->
+			<section id="three" class="wrapper special">
+				<div class="inner">
+					<header class="align-center">	<h2><p>
+					<div class="flex flex-2">
+						<article>
+							<div class="image fit">	<header><h3><p><footer>
+						<article>
+							<div class="image fit">	<header><h3><p><footer>
 
-				//util.js
-				
-				
-				//main.js
-				(function($) {
-					// Breakpoints.
-					skel.breakpoints({
-						xlarge:	'(max-width: 1680px)',
-						large:	'(max-width: 1280px)',
-						medium:	'(max-width: 980px)',
-						small:	'(max-width: 736px)',
-						xsmall:	'(max-width: 480px)'
-					});
-					$(function() {
-						var	$window = $(window), $body = $('body');
-						// Disable animations/transitions until the page has loaded.
-						$body.addClass('is-loading');
-						$window.on('load', function() {
-							window.setTimeout(function() {
-								$body.removeClass('is-loading');
-							}, 100);
-						});
-						// Prioritize "important" elements on medium.
-						skel.on('+medium -medium', function() {
-							$.prioritize('.important\\28 medium\\29', skel.breakpoint('medium').active );
-						});
-						// Off-Canvas Navigation.
-						// Navigation Panel.
-						$('<div id="navPanel">' + $('#nav').html() + '<a href="#navPanel" class="close"></a>' + '</div>' ).appendTo($body).panel({
-							delay: 500,
-							hideOnClick: true,
-							hideOnSwipe: true,
-							resetScroll: true,
-							resetForms: true,
-							side: 'left'
-						});
-						// Fix: Remove transitions on WP<10 (poor/buggy performance).
-						if (skel.vars.os == 'wp' && skel.vars.osVersion < 10)
-							$('#navPanel').css('transition', 'none');
-					});
-				})(jQuery);
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<div class="flex">
+						<div class="copyright">
+						<ul class="icons">
+							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook
+							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter
+							<li><a href="#" class="icon fa-linkedin"><span class="label">linkedIn
+							<li><a href="#" class="icon fa-pinterest-p"><span class="label">Pinterest
+							<li><a href="#" class="icon fa-vimeo"><span class="label">Vimeo
+*/
+
 
 			</script>
+
 
 	</body>
 </html>
