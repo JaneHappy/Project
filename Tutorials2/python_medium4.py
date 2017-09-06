@@ -92,11 +92,12 @@ text = Text(root)
 text.pack()
 
 listBox = Listbox(root, height=300)
+listBox.pack()
 # 设置一个数据源
 mylist = ["apple", "orange", "milk", "water"]  #list
 for item in mylist:
 	listBox.insert(0, item)
-listBox.pack()
+#listBox.pack()
 
 root.mainloop()
 
