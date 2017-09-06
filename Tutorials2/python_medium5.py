@@ -147,5 +147,11 @@ label.config(text="这是一个演示程序")
 
 root.mainloop()
 
+'''
+(1,)
+(0,)
+[Finished in 11.7s]
+'''
+
 
 
